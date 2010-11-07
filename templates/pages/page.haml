@@ -1,0 +1,22 @@
+%html
+  %head
+    = $head
+    %title= $title
+    = $styles, $scripts
+  %body.right-sidebar
+    #wrapper
+      #container
+        #header
+          #logo
+            %img(src="#{$logo}")
+        #sidebar-left= $left
+        #center
+          #mission= $mission
+          #title= $title
+          %ul.tabs.primary= $tabs
+          %ul.tabs.secondary= $tabs2
+          #message-wrapper= $messages
+          #content= $content
+        #sidebar-right= $right
+        #footer= $footer
+      = $closure

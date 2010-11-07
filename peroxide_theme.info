@@ -1,0 +1,5 @@
+name = Peroxide Theme
+description = Basic theme to test the peroxide theme engine.
+version = VERSION
+core = 6.x
+engine = peroxide
