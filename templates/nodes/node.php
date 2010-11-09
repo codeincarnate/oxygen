@@ -1,3 +1,0 @@
-<?php
-require_once 'C:\nginx\html\p.local.com\peroxide\sites\all\themes\engines\peroxide\haml\HamlHelpers.php';
-?><div class="node" id="node-<?php echo $node->nid; ?>"><h2> <a href="<?php echo $node_url; ?>"><?php echo $title; ?></a> </h2> <span class="submitted"><?php echo $submitted; ?></span> <div class="content"><?php echo $content; ?></div><div class="terms"><?php echo $terms; ?></div><div class="links"><?php echo $links; ?></div></div>
