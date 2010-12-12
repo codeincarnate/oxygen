@@ -1,22 +1,59 @@
+!!!
 %html
   %head
     = $head
-    %title= $title
+    %title= $head_title
     = $styles, $scripts
-  %body.right-sidebar
-    #wrapper
-      #container
-        #header
-          #logo
+  %body(class="#{$body_classes}")
+    -# Full Page
+    #page
+
+      -# Page header
+      #header
+        #logo-title
+          %a(href="#{$front_page}")
             %img(src="#{$logo}")
-        #sidebar-left= $left
-        #center
-          #mission= $mission
-          #title= $title
-          %ul.tabs.primary= $tabs
-          %ul.tabs.secondary= $tabs2
-          #message-wrapper= $messages
-          #content= $content
-        #sidebar-right= $right
-        #footer= $footer
-      = $closure
+          #name-and-slogan
+            %h1#site-name
+              - if ($site_name)
+                %a(href="#{$front_page}")= $site_name
+            - if ($site_slogan)
+              #site-slogan= $site_slogan
+        - if ($search_box)
+          #search-box= $search_box
+        - if ($header)
+          #header-region= $header
+
+      -# Main Container
+      .clear-block#container
+        .menu#navigation
+          .clear-block#primary
+            %h1.title#page-title= $title
+            = $primary_links, $secondary_links
+
+        -# Left sidebar
+        - if ($left)
+          .column.sidebar#sidebar-left= $left
+
+        -# Main Content
+        .column#main
+          #main-squeeze
+            #mission= $mission
+            #content
+              - if ($tabs)
+                .tabs= $tabs
+              = $messages, $help
+              #content-content= $content
+              = $feed_icons
+
+        -# Right sidebar
+        - if ($right)
+          .column.sidebar#sidebar-right= $right
+
+      -# Footer
+      #footer-wrapper
+        - if ($footer-message)
+          #footer-message= $footer_message
+        - if ($footer)
+          #footer= $footer
+    = $closure

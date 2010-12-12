@@ -1,7 +1,17 @@
-%div.node(id="node-#{$node->nid}")
-  %h2
-    %a(href="#{$node_url}")= $title
-  %span.submitted= $submitted
-  .content= $content
-  .terms= $terms
-  .links= $links
+%div.node.clear-block(id="node-#{$node->nid}" class="#{$node_classes}")
+  = $picture
+  - if (!$page)
+    %h2.node-title
+      %a(href="#{$node_url}" title="#{$title}")= $title
+
+  -# Meta information
+  -if ($submitted || $terms)
+    .meta
+      - if ($submitted)
+        %span.submitted= $submitted
+      -if ($terms)
+        %span.terms.terms-inline= $terms
+
+  -# Content
+  .content.clear-block= $content
+  = $links

@@ -1,0 +1,41 @@
+@import "blueprint/colors";
+
+.messages {
+  ul {
+    padding-left: 5px;
+    li {
+      background: none;
+      display: inline;
+      padding-left: 0;
+    }
+  }
+}
+
+div.messages {
+  background: #BBDDFF none repeat scroll 0 0;
+  border: 1px solid #AACCEE;
+  color: #003366;
+  margin: 0 0 10px;
+  padding: 9px;
+}
+
+
+div.status {
+  background-color: $success_bg_color;
+  border-color: $success_border_color;
+  color: $success_color;
+}
+
+div.warning {
+  background-color: $notice_bg_color;
+  border-color: $notice_border_color;
+  color: $notice_color;
+}
+
+div.error {
+  background-color: $error_bg_color;
+  border-color: $error_border_color;
+  color: $error_color;
+}
+
+

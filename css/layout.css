@@ -1,0 +1,48 @@
+/**
+ * @file
+ * BASE_THEME layout
+ */
+ 
+#page {
+  margin: 0 auto;
+  padding: 0 10px;
+  width: 940px;
+}
+
+#sidebar-left,
+#main,
+#sidebar-right {
+  float: left;
+}
+
+#sidebar-left,
+#sidebar-right {
+  width: 20%;
+}
+
+body.front #sidebar-left,
+body.front #sidebar-right,
+body.front #middle-bar {
+  float: left;
+  width: 33%;
+}
+
+body.one-sidebar #main {
+  width: 80%;
+}
+
+body.two-sidebars #main {
+  width: 60%;
+}
+
+body.sidebar-left #main-squeeze {
+  margin-left: 20px;
+}
+
+body.sidebar-right #main-squeeze {
+  margin-right: 20px;
+}
+
+body.two-sidebars #main-squeeze {
+  margin: 0 20px;
+}

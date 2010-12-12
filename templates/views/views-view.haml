@@ -1,0 +1,28 @@
+-# Main container
+%div(class="#{$classes}")
+  -# Header components
+  - if ($header)
+    .view-header= $header
+  - if ($exposed)
+    .view-filters= $exposed
+  - if ($attachment_before)
+    .attachment.attachment-before= $attachment_before
+  
+  -# View Content
+  - if ($rows)
+    .view-content= $rows
+  - else if ($empty)
+    .view-empty= $empty
+  - if ($pager)
+    = $pager
+
+  -# Footer components
+  - if ($attachment_after)
+    .attachment.attachment-after= $attachment_after
+  - if ($more)
+    = $more
+  - if ($footer)
+    .view-footer= $footer
+  - if ($feed_icon)
+    .feed-icon = $feed_icon
+

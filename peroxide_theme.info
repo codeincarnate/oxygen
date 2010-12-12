@@ -1,5 +1,13 @@
 name = Peroxide Theme
-description = Basic theme to test the peroxide theme engine.
+description = A starter theme for the peroxide theme engine.
 version = VERSION
 core = 6.x
 engine = peroxide
+
+stylesheets[all][] = css/layout.css
+stylesheets[all][] = css/style.css
+
+sass[all][] = scss/base.scss
+sass[all][] = scss/layout.scss
+sass[all][] = scss/test_style.scss
+sass[all][] = scss/messages.scss

@@ -31,17 +31,43 @@ function phptemplate_body_class($left, $right) {
  *   An array containing the breadcrumb links.
  * @return a string containing the breadcrumb output.
  */
-function phptemplate_breadcrumb($breadcrumb) {
+function peroxide_theme_breadcrumb($breadcrumb) {
   if (!empty($breadcrumb)) {
     return '<div class="breadcrumb">'. implode(' › ', $breadcrumb) .'</div>';
   }
 }
 
 /**
+ * Implementation of hook_preprocess_node().
+ */
+function peroxide_theme_preprocess_node(&$vars) {
+  $node = $vars['node'];
+
+
+  // Get node classes
+  $node_classes = array();
+  $node_classes[] = "node-$node->type";
+  if ($node->sticky) {
+    $node_classes[] = ' sticky';
+  }
+  if (!$node->status) {
+    $node_classes[] = 'node-unpublished';
+  }
+  $vars['node_classes'] = implode(' ', $node_classes);
+
+  // Get node ID
+  $vars['id'] = "node-$node->nid";
+
+}
+
+/**
  * Override or insert PHPTemplate variables into the templates.
  */
-function phptemplate_preprocess_page(&$vars) {
+function peroxide_theme_preprocess_page(&$vars) { 
+  $vars['primary_links'] = theme('links', $vars['primary_links'], array('class' => 'links primary-links'));
+  $vars['secondary_links'] = theme('links', $vars['secondary_links'], array('class' => 'links secondary-links'));
   $vars['tabs2'] = menu_secondary_local_tasks();
+
 
   // Hook into color.module
   if (module_exists('color')) {
@@ -52,7 +78,7 @@ function phptemplate_preprocess_page(&$vars) {
 /**
  * Add a "Comments" heading above comments except on forum pages.
  */
-function garland_preprocess_comment_wrapper(&$vars) {
+function peroxide_theme_preprocess_comment_wrapper(&$vars) {
   if ($vars['content'] && $vars['node']->type != 'forum') {
     $vars['content'] = '<h2 class="comments">'. t('Comments') .'</h2>'.  $vars['content'];
   }
@@ -64,14 +90,14 @@ function garland_preprocess_comment_wrapper(&$vars) {
  *
  * @ingroup themeable
  */
-function phptemplate_menu_local_tasks() {
+function peroxide_theme_menu_local_tasks() {
   return menu_primary_local_tasks();
 }
 
 /**
  * Returns the themed submitted-by string for the comment.
  */
-function phptemplate_comment_submitted($comment) {
+function peroxide_theme_comment_submitted($comment) {
   return t('!datetime — !username',
     array(
       '!username' => theme('username', $comment),
@@ -82,7 +108,7 @@ function phptemplate_comment_submitted($comment) {
 /**
  * Returns the themed submitted-by string for the node.
  */
-function phptemplate_node_submitted($node) {
+function peroxide_theme_node_submitted($node) {
   return t('!datetime — !username',
     array(
       '!username' => theme('username', $node),
@@ -93,7 +119,7 @@ function phptemplate_node_submitted($node) {
 /**
  * Generates IE CSS links for LTR and RTL languages.
  */
-function phptemplate_get_ie_styles() {
+function peroxide_theme_get_ie_styles() {
   global $language;
 
   $iecss = '<link type="text/css" rel="stylesheet" media="all" href="'. base_path() . path_to_theme() .'/fix-ie.css" />';
@@ -103,3 +129,4 @@ function phptemplate_get_ie_styles() {
 
   return $iecss;
 }
+
