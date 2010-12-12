@@ -2,29 +2,6 @@
 // $Id: template.php,v 1.16.2.3 2010/05/11 09:41:22 goba Exp $
 
 /**
- * Sets the body-tag class attribute.
- *
- * Adds 'sidebar-left', 'sidebar-right' or 'sidebars' classes as needed.
- */
-function phptemplate_body_class($left, $right) {
-  if ($left != '' && $right != '') {
-    $class = 'sidebars';
-  }
-  else {
-    if ($left != '') {
-      $class = 'sidebar-left';
-    }
-    if ($right != '') {
-      $class = 'sidebar-right';
-    }
-  }
-
-  if (isset($class)) {
-    print ' class="'. $class .'"';
-  }
-}
-
-/**
  * Return a themed breadcrumb trail.
  *
  * @param $breadcrumb
@@ -68,6 +45,7 @@ function peroxide_theme_preprocess_page(&$vars) {
   $vars['secondary_links'] = theme('links', $vars['secondary_links'], array('class' => 'links secondary-links'));
   $vars['tabs2'] = menu_secondary_local_tasks();
 
+var_dump($vars);
 
   // Hook into color.module
   if (module_exists('color')) {
