@@ -4,10 +4,9 @@ version = VERSION
 core = 6.x
 engine = peroxide
 
-stylesheets[all][] = css/layout.css
 stylesheets[all][] = css/style.css
 
-sass[all][] = scss/base.scss
-sass[all][] = scss/layout.scss
+sass[all][] = scss/base.sass
+sass[all][] = scss/layout.sass
 sass[all][] = scss/messages.scss
-
+sass[all][] = scss/typography.sass

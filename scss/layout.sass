@@ -1,0 +1,26 @@
+$blueprint-grid-columns : 24;
+$blueprint-grid-width   : 30px;
+$blueprint-grid-margin  : 10px;
+
+@import "blueprint/grid"
+
+#page
+  +container()
+
+#container
+  +container()
+
+#sidebar-left, #sidebar-right
+  +column(6)
+
+#sidebar-right
+  +last()
+
+body.one-sidebar #main
+  +column(18)
+
+body.sidebar-left #main
+  +last
+
+body.two-sidebars #main
+  +column(12)

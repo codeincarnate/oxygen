@@ -45,8 +45,6 @@ function peroxide_theme_preprocess_page(&$vars) {
   $vars['secondary_links'] = theme('links', $vars['secondary_links'], array('class' => 'links secondary-links'));
   $vars['tabs2'] = menu_secondary_local_tasks();
 
-var_dump($vars);
-
   // Hook into color.module
   if (module_exists('color')) {
     _color_page_alter($vars);

@@ -5,7 +5,6 @@
     padding-left: 5px;
     li {
       background: none;
-      display: inline;
       padding-left: 0;
     }
   }
@@ -19,23 +18,22 @@ div.messages {
   padding: 9px;
 }
 
-
 div.status {
-  background-color: $success_bg_color;
-  border-color: $success_border_color;
-  color: $success_color;
+  background-color: $success-bg-color;
+  border-color: $success-border-color;
+  color: $success-color;
 }
 
 div.warning {
-  background-color: $notice_bg_color;
-  border-color: $notice_border_color;
-  color: $notice_color;
+  background-color: $notice-bg-color;
+  border-color: $notice-border-color;
+  color: $notice-color;
 }
 
 div.error {
-  background-color: $error_bg_color;
-  border-color: $error_border_color;
-  color: $error_color;
+  background-color: $error-bg-color;
+  border-color: $error-border-color;
+  color: $error-color;
 }
 
 
