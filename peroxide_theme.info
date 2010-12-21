@@ -5,6 +5,8 @@ core = 6.x
 engine = peroxide
 
 stylesheets[all][] = css/style.css
+stylesheets[all][] = css/tabs.css
+stylesheets[all][] = css/forms.css
 
 sass[all][] = scss/base.sass
 sass[all][] = scss/layout.sass

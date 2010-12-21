@@ -41,7 +41,9 @@
             #mission= $mission
             #content
               - if ($tabs)
-                .tabs= $tabs
+                .tabs
+                  %ul.tabs-primary= $tabs
+                  %ul.tabs-secondary= $tabs2
               = $messages, $help
               #content-content= $content
               = $feed_icons
