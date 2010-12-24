@@ -1,0 +1,24 @@
+input.form-submit {
+  background: -moz-linear-gradient(100% 100% 90deg, #FFF, #C4C4C4);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFF), to(#C4C4C4));
+  border: 1px solid #949494;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  color: #4F4F4F;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 5px 15px;
+  text-shadow: #FFF 1px 1px 1px;
+}
+
+input.form-submit:hover {
+  -moz-box-shadow: 0px 0px 3px 3px #D4D4D4;
+  -webkit-box-shadow: 0px 0px 3px 3px #D4D4D4;
+  box-shadow: 0px 0px 3px 3px #D4D4D4;
+}
+
+input.form-submit:active {
+  background: -moz-linear-gradient(100% 100% 90deg, #C3C3C3, #FFF);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#C3C3C3), to(#FFF));
+}
