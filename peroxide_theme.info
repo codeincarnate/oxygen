@@ -4,11 +4,16 @@ version = VERSION
 core = 6.x
 engine = peroxide
 
+; Add stylesheets
 stylesheets[all][] = css/style.css
 stylesheets[all][] = css/tabs.css
 stylesheets[all][] = css/forms.css
 
+; Add Sass
 sass[all][] = scss/base.sass
 sass[all][] = scss/layout.sass
 sass[all][] = scss/messages.scss
 sass[all][] = scss/typography.sass
+
+; Set parser options
+peroxide[options][sass][style] = "compact"
