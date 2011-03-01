@@ -1,61 +1,48 @@
-!!!
-%html
-  %head
-    = $head
-    %title= $head_title
-    = $styles, $scripts
-  %body(class="#{$body_classes}")
-    -# Full Page
-    #page
+-# Full Page
+#page
 
-      -# Page header
-      #header
-        #logo-title
-          %a(href="#{$front_page}")
-            %img(src="#{$logo}")
-          #name-and-slogan
-            %h1#site-name
-              - if ($site_name)
-                %a(href="#{$front_page}")= $site_name
-            - if ($site_slogan)
-              #site-slogan= $site_slogan
-        - if ($search_box)
-          #search-box= $search_box
-        - if ($header)
-          #header-region= $header
+  -# Page header
+  #header
+    #logo-title
+      %a(href="#{$front_page}")
+        %img(src="#{$logo}")
+      #name-and-slogan
+        %h1#site-name
+          - if ($site_name)
+            %a(href="#{$front_page}")= $site_name
+        - if ($site_slogan)
+          #site-slogan= $site_slogan
 
-      -# Main Container
-      .clear-block#container
-        .menu#navigation
-          .clear-block#primary
-            %h1.title#page-title= $title
-            = $primary_links, $secondary_links
+  -# Main Container
+  .clear-block#container
+    .menu#navigation
+      .clear-block#primary
+        %h1.title#page-title= $title
+        = $main_menu, $secondary_menu
 
-        -# Left sidebar
-        - if ($left)
-          .column.sidebar#sidebar-left= $left
+    -# Left sidebar
+    - if ($left)
+      .column.sidebar#sidebar-left= $left
 
-        -# Main Content
-        .column#main
-          #main-squeeze
-            #mission= $mission
-            #content
-              - if ($tabs)
-                .tabs
-                  %ul.tabs-primary= $tabs
-                  %ul.tabs-secondary= $tabs2
-              = $messages, $help
-              #content-content= $content
-              = $feed_icons
+    -# Main Content
+    .column#main
+      #main-squeeze
+        #mission= $mission
+        #content
+          - if ($tabs)
+            .tabs
+              %ul.tabs-primary= $tabs
+              %ul.tabs-secondary= $tabs2
+          = $messages, $help
+          #content-content= $content
+          = $feed_icons
 
-        -# Right sidebar
-        - if ($right)
-          .column.sidebar#sidebar-right= $right
+    -# Right sidebar
+    - if ($right)
+      .column.sidebar#sidebar-right= $right
 
-      -# Footer
-      #footer-wrapper
-        - if ($footer-message)
-          #footer-message= $footer_message
-        - if ($footer)
-          #footer= $footer
-    = $closure
+  -# Footer
+  #footer-wrapper
+    - if ($footer)
+      #footer= $footer
+= $page_bottom

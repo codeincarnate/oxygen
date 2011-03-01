@@ -41,8 +41,8 @@ function peroxide_theme_preprocess_node(&$vars) {
  * Override or insert PHPTemplate variables into the templates.
  */
 function peroxide_theme_preprocess_page(&$vars) { 
-  $vars['primary_links'] = theme('links', $vars['primary_links'], array('class' => 'links primary-links'));
-  $vars['secondary_links'] = theme('links', $vars['secondary_links'], array('class' => 'links secondary-links'));
+  $vars['main_menu'] = theme('links', $vars['main_menu'], array('class' => 'links primary-links'));
+  $vars['secondary_menu'] = theme('links', $vars['secondary_menu'], array('class' => 'links secondary-links'));
   $vars['tabs2'] = menu_secondary_local_tasks();
 
   // Hook into color.module

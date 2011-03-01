@@ -1,7 +1,7 @@
 name = Peroxide Theme
 description = A starter theme for the peroxide theme engine.
 version = VERSION
-core = 6.x
+core = 7.x
 engine = peroxide
 
 ; Add stylesheets
