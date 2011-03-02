@@ -21,6 +21,7 @@ function peroxide_theme_preprocess_node(&$vars) {
   $node = $vars['node'];
 
 
+
   // Get node classes
   $node_classes = array();
   $node_classes[] = "node-$node->type";
@@ -40,10 +41,15 @@ function peroxide_theme_preprocess_node(&$vars) {
 /**
  * Override or insert PHPTemplate variables into the templates.
  */
-function peroxide_theme_preprocess_page(&$vars) { 
-  $vars['main_menu'] = theme('links', $vars['main_menu'], array('class' => 'links primary-links'));
-  $vars['secondary_menu'] = theme('links', $vars['secondary_menu'], array('class' => 'links secondary-links'));
-  $vars['tabs2'] = menu_secondary_local_tasks();
+function peroxide_theme_preprocess_page(&$vars) {
+
+  //echo '<pre>';
+  //var_dump($vars['tabs']);
+  //echo '</pre>';
+
+ 
+  
+  
 
   // Hook into color.module
   if (module_exists('color')) {

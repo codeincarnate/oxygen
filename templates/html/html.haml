@@ -1,0 +1,8 @@
+!!! RDFa
+%html(xmlns="http://www.w3.org/1999/xhtml" xml:lang="#{$language->language}" version="XHTML+RDFa 1.0" dir="#{$language->dir}" #{$rdf_namespaces})
+  %head
+    = $head
+    %title= $head_title
+    = $styles, $scripts
+  %body
+    = $page_top, $page, $page_bottom

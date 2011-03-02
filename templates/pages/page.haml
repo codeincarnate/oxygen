@@ -18,31 +18,23 @@
     .menu#navigation
       .clear-block#primary
         %h1.title#page-title= $title
-        = $main_menu, $secondary_menu
 
-    -# Left sidebar
-    - if ($left)
-      .column.sidebar#sidebar-left= $left
+    -# Sidebar First
+    - if ($page['sidebar_first'])
+      .column.sidebar#sidebar-first= render($page['sidebar_first'])
 
     -# Main Content
     .column#main
       #main-squeeze
-        #mission= $mission
         #content
           - if ($tabs)
             .tabs
-              %ul.tabs-primary= $tabs
-              %ul.tabs-secondary= $tabs2
-          = $messages, $help
-          #content-content= $content
+              %ul.tabs-primary= render($tabs)
+              %ul.tabs-secondary= render($tabs2)
+          = $messages, render($help)
+          #content-content= render($page['content'])
           = $feed_icons
 
-    -# Right sidebar
-    - if ($right)
-      .column.sidebar#sidebar-right= $right
-
-  -# Footer
-  #footer-wrapper
-    - if ($footer)
-      #footer= $footer
-= $page_bottom
+    -# Sidebar second
+    - if ($page['sidebar_second'])
+      .column.sidebar#sidebar-second= render($page['sidebar_second'])
