@@ -1,4 +1,4 @@
-name = Peroxide Theme
+name = Oxygen
 description = A starter theme for the peroxide theme engine.
 version = VERSION
 core = 7.x
@@ -28,3 +28,4 @@ sass[all][] = scss/typography.sass
 
 ; Set parser options
 peroxide[options][sass][style] = "compact"
+

@@ -8,7 +8,7 @@
  *   An array containing the breadcrumb links.
  * @return a string containing the breadcrumb output.
  */
-function peroxide_theme_breadcrumb($breadcrumb) {
+function oxygen_breadcrumb($breadcrumb) {
   if (!empty($breadcrumb)) {
     return '<div class="breadcrumb">'. implode(' › ', $breadcrumb) .'</div>';
   }
@@ -17,7 +17,7 @@ function peroxide_theme_breadcrumb($breadcrumb) {
 /**
  * Implementation of hook_preprocess_node().
  */
-function peroxide_theme_preprocess_node(&$vars) {
+function oxygen_preprocess_node(&$vars) {
   $node = $vars['node'];
 
 
@@ -41,7 +41,7 @@ function peroxide_theme_preprocess_node(&$vars) {
 /**
  * Override or insert PHPTemplate variables into the templates.
  */
-function peroxide_theme_preprocess_page(&$vars) {
+function oxygen_preprocess_page(&$vars) {
 
   //echo '<pre>';
   //var_dump($vars['tabs']);
@@ -60,7 +60,7 @@ function peroxide_theme_preprocess_page(&$vars) {
 /**
  * Add a "Comments" heading above comments except on forum pages.
  */
-function peroxide_theme_preprocess_comment_wrapper(&$vars) {
+function oxygen_preprocess_comment_wrapper(&$vars) {
   if ($vars['content'] && $vars['node']->type != 'forum') {
     $vars['content'] = '<h2 class="comments">'. t('Comments') .'</h2>'.  $vars['content'];
   }
@@ -72,14 +72,14 @@ function peroxide_theme_preprocess_comment_wrapper(&$vars) {
  *
  * @ingroup themeable
  */
-function peroxide_theme_menu_local_tasks() {
+function oxygen_menu_local_tasks() {
   return menu_primary_local_tasks();
 }
 
 /**
  * Returns the themed submitted-by string for the comment.
  */
-function peroxide_theme_comment_submitted($comment) {
+function oxygen_comment_submitted($comment) {
   return t('!datetime — !username',
     array(
       '!username' => theme('username', $comment),
@@ -90,7 +90,7 @@ function peroxide_theme_comment_submitted($comment) {
 /**
  * Returns the themed submitted-by string for the node.
  */
-function peroxide_theme_node_submitted($node) {
+function oxygen_node_submitted($node) {
   return t('!datetime — !username',
     array(
       '!username' => theme('username', $node),
@@ -101,7 +101,7 @@ function peroxide_theme_node_submitted($node) {
 /**
  * Generates IE CSS links for LTR and RTL languages.
  */
-function peroxide_theme_get_ie_styles() {
+function oxygen_get_ie_styles() {
   global $language;
 
   $iecss = '<link type="text/css" rel="stylesheet" media="all" href="'. base_path() . path_to_theme() .'/fix-ie.css" />';
